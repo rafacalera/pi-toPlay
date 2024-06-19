@@ -30,7 +30,7 @@ public class GamesController {
     @ApiResponse(responseCode = "201", content = @Content)
     public ResponseEntity<UUID> create(@RequestBody final CreateGameDTO game, UriComponentsBuilder uriBuilder) {
         UUID id = gameService.create(game);
-        URI uri = uriBuilder.path("/games/{id}").buildAndExpand(id).toUri();
+            URI uri = uriBuilder.path("/games/{id}").buildAndExpand(id).toUri();
 
         return ResponseEntity.created(uri).body(id);
     }
